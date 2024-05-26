@@ -96,8 +96,8 @@ OUTPUT
 ==Reference Implementation==
 
 * Python library implementation: [https://github.com/ethankosakovsky/bip85]
+* Python 3.x library implementation: [https://github.com/akarve/bipsea]
 * JavaScript library implementation: [https://github.com/hoganri/bip85-js]
-* Python 3.x implementation: [https://github.com/akarve/bipsea]
 
 ==Applications==
 
