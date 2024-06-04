@@ -144,6 +144,10 @@ Language Table
 |-
 | Czech
 | 8'
+|-
+| Portuguese
+| 9'
+|-
 |}
 
 Words Table
