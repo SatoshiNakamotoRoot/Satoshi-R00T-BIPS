@@ -368,8 +368,9 @@ Calculate the following integers:
 
 Read <code>bytes_per_roll</code> bytes from the DRNG.
 Trim any bits in excess of <code>bits_per_roll</code> (retain the most
-significant bits). The resulting integer represents a single roll.
-Repeat.
+significant bits). The resulting integer represents a single roll or trial.
+If the trial is greater than or equal to the number of sides, skip it and
+move on to the next one. Repeat as needed until all rolls are complete.
 
 INPUT:
 * MASTER BIP32 ROOT KEY: xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb
