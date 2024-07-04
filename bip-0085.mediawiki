@@ -34,7 +34,7 @@ The terminology related to keychains used in the wild varies widely, for example
 # '''BIP39 seed''' is the result of hashing the BIP39 mnemonic seed.
 
 When in doubt and in cases where it does not contradict another BIP, assume
-'''big endian''' byte serialization such that leftmost byte is the most significant.
+'''big endian''' byte serialization such that the leftmost byte is the most significant.
 
 ==Motivation==
 
@@ -54,8 +54,8 @@ For each application that requires its own wallet, a unique private key is deriv
 
 The HMAC-SHA512 function is specified in [http://tools.ietf.org/html/rfc4231 RFC 4231].
 
-Application codes may be arbitrary but should be semantic, such as a BIP number
-or ASCII character code sequence.
+Application codes may be arbitrary but should be semantic, such as a BIP number,
+ASCII character code sequence, or similar.
 
 ===Test vectors===
 
@@ -99,9 +99,9 @@ OUTPUT
 
 ==Reference Implementation==
 
-* Python library implementation: [https://github.com/ethankosakovsky/bip85]
 * Python 3.x library implementation: [https://github.com/akarve/bipsea]
-* JavaScript library implementation: [https://github.com/hoganri/bip85-js]
+* Legacy Python library implementation: [https://github.com/ethankosakovsky/bip85]
+* Legacy JavaScript library implementation: [https://github.com/hoganri/bip85-js]
 
 ==Applications==
 
@@ -368,7 +368,8 @@ Calculate the following integers:
 
 Read <code>bytes_per_roll</code> bytes from the DRNG.
 Trim any bits in excess of <code>bits_per_roll</code> (retain the most
-significant bits). The remaining integer is one roll.
+significant bits). The resulting integer represents a single roll.
+Repeat.
 
 INPUT:
 * MASTER BIP32 ROOT KEY: xprv9s21ZrQH143K2LBWUUQRFXhucrQqBpKdRRxNVq2zBqsx8HVqFk2uYo8kmbaLLHRdqtQpUm98uKfu3vca1LqdGhUtyoFnCNkfmXRyPXLjbKb
