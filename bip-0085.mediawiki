@@ -239,7 +239,9 @@ OUTPUT
 Application number: 32'
 
 Consistent with BIP32, use the first 32 bytes of the derived entropy as the chain code.
-Use the second 32 bytes[1] of the derived entropy as the private key.
+Use the last 32 bytes[1] as the private key. Prepend an empty byte (<code>0x00</code>)
+per BIP32 on master key serialization.
+
 Child number, depth, and parent fingerprint are forced to zero, as with any root
 private key.
 
