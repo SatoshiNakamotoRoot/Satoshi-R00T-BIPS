@@ -219,9 +219,12 @@ OUTPUT:
 ===HD-Seed WIF===
 Application number: 2'
 
-Uses the most significant 32 bytes[1] of entropy as the secret exponent to derive
-a private key and encode as a compressed WIF which will be used as the hdseed for
-Bitcoin Core wallets.
+Uses the most significant 32 bytes
+<ref name="curve-order">There is a very small chance that you'll make an invalid
+key that is zero or bigger than the order of the curve. If this occurs, software
+should hard fail (forcing users to iterate to the next index).</ref>
+of entropy as the secret exponent to derive a private key and encode as a compressed
+WIF which to be used as the hdseed for Bitcoin Core wallets.
 
 Path format is <code>m/83696968'/2'/{index}'</code>
 
@@ -237,7 +240,7 @@ OUTPUT
 Application number: 32'
 
 Consistent with BIP32, use the first 32 bytes of the derived entropy as the chain code.
-Use the last 32 bytes[1] as the private key. Prepend an empty byte (<code>0x00</code>)
+Use the last 32 bytes<ref name="curve-order" /> as the private key. Prepend an empty byte (<code>0x00</code>)
 per BIP32 on master key serialization.
 
 Child number, depth, and parent fingerprint are forced to zero, as with any root
@@ -433,7 +436,7 @@ BIP32, BIP39
 
 ==Footnotes==
 
-[1] There is a very small chance that you'll make an invalid key that is zero or bigger than the order of the curve. If this occurs, software should hard fail (forcing users to iterate to the next index).
+<references />
 
 From BIP32:
 In case parse<sub>256</sub>(I<sub>L</sub>) is 0 or ≥ n, the resulting key is invalid, and one should proceed with the next value for i. (Note: this has probability lower than 1 in 2<sup>127</sup>.)
