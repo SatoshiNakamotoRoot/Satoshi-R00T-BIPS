@@ -2,7 +2,8 @@
   BIP: 85
   Layer: Applications
   Title: Deterministic Entropy From BIP32 Keychains
-  Author: Aneesh Karve <dowsing.seaport0d@icloud.com>
+  Author: Ethan Kosakovsky <ethankosakovsky@protonmail.com>
+          Aneesh Karve <dowsing.seaport0d@icloud.com>
   Comments-Summary: No comments yet.
   Comments-URI: https://github.com/bitcoin/bips/wiki/Comments:BIP-0085
   Status: Draft
@@ -11,9 +12,6 @@
   License: BSD-2-Clause
            OPL
 </pre>
-
-The original Author is Ethan Kosakovsky <ethankosakovsky@protonmail.com>, who is
-not responding to email or Github mentions as of this writing.
 
 ==Abstract==
 
@@ -110,7 +108,7 @@ OUTPUT
 
 The Application number defines how entropy will be used post processing. Some basic examples follow:
 
-Derivation path uses the format <code>m/83696968'/{app_no}'/{index}'</code> where ''{app_no}'' is the path for the application, and ''{index}'' is the index.
+Derivation path uses the format <code>m/83696968'/{app}'/{index}'</code> where ''{app}'' is the '''path''' for the application, and ''{index}'' is the index.
 
 ===BIP39===
 Application number: 39'
@@ -362,7 +360,7 @@ The derivation path format is: <code>m/83696968'/89101'/{sides}'/{rolls}'/{index
 
 Use this application to generate pin numbers or any other numeric secret.
 Roll values are zero indexed such that an N-sided die produces values in the range
-[0, N-1], inclusive. Rolls should be separated by a comma or similar.
+[0, N-1], inclusive. Applications should separate printed rolls by a comma or similar.
 
 Create a BIP85 DRNG whose seed is the derived entropy. 
 
